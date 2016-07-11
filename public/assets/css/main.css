@@ -1,0 +1,17 @@
+.infos-dashboard{
+  color : blue;
+}
+.infos-dashboard:hover{
+  color : red;
+}
+.color-generation-green
+{
+	background-color: #86e686 !important;
+}
+.color-generation-red{
+	background-color: #ff9f9f !important;
+}
+
+.edit-button:hover{
+	color : blue !important;
+}
