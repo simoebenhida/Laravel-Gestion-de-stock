@@ -44,14 +44,14 @@ Entres
                               <td>{{ $entre->nfacture }}</td>
                               <td>{{ $entre->quantite}}</td>
                               <td>{{ $entre->prix_uni}}</td>
-                              
-                              <td>{{ $entre->fourni }}</td>
+
+                              <td><a href="{{ route('single.client',$entre->id)}}">{{ $entre->fourni }}</a></td>
                               <td>{!! $entre->solde = $entre->quantite * $entre->prix_uni !!}</td>
                               <td>
                           <div class="btn-group btn-group-xs">
                            <a href="{{ route('get_edit_entres',$entre->id) }}" class="btn btn-default"><i class="fa fa-edit"></i></a>
                             <a href="{{ route('destroy.entres',$entre->id) }}" class="btn btn-defaultt"><i class="fa fa-trash"></i></a>
-                            
+
                           </div>
                         </td>
 

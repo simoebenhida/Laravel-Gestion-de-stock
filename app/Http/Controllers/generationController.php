@@ -8,12 +8,13 @@ use App\Http\Requests;
 use App\Generation;
 use Session;
 use App\type;
+use App\Client;
 class generationController extends Controller
 {
 
    //----------------------------------------------------Generation-----------------------------------------
    //
-   
+
    public function generation_home()
    {
     $generation = Generation::OrderBy('date')->get();
@@ -54,7 +55,7 @@ class generationController extends Controller
     }
 
     //delete
-    
+
     public function destroy_generation($id)
     {
       $generation = Generation::find($id);
@@ -77,7 +78,7 @@ class generationController extends Controller
 
   //---------------------------------------------------------------------------------------------------------------------------------------------------Entres-----------------------------------------------------------------------------
   //
-    
+
     public function show_entres()
     {
       $entres = Generation::where('mode',1)->OrderBy('date')->get();
@@ -114,7 +115,7 @@ class generationController extends Controller
 
     }
     //Edit entres
-    
+
     public function get_edit_entres($id)
     {
       $entres = Generation::find($id);
@@ -152,7 +153,7 @@ class generationController extends Controller
     }
 
     //delete
-    
+
     public function destroy_entres($id)
     {
       $entres = Generation::find($id);
@@ -205,7 +206,7 @@ class generationController extends Controller
 
     }
     //Edit sorties
-    
+
     public function get_edit_sorties($id)
     {
       $sorties = Generation::find($id);
@@ -243,7 +244,7 @@ class generationController extends Controller
     }
 
     //delete
-    
+
     public function destroy_sorties($id)
     {
       $sorties = Generation::find($id);
@@ -307,7 +308,49 @@ class generationController extends Controller
         return redirect()->route('single.type',$types->type_id);
     }
 
-   
+    //----------------------------------------------------CLient-----------------------------------------
+    //
 
+  /**  public function single_client($id)
+    {
+      $client = client::find($id);
+      $generation = Generation::where('fourni',$client->name);
+      $entres = $generation->where('mode',1)->get();
+      $sorties = $generation->where('mode',2)->get();
+      return view('client.single')->with('entres',$entres)->with('sorties',$sorties)->with('client',$client);
+    }
+    **/
+    public function single_client($id)
+    {
+      $generation = Generation::find($id);   //the generation row where id = $id
+      $client = client::where('name',$generation->fourni)->first(); //client name
+      $generations = Generation::where('fourni',$client->name); // generation where the fourni have the name of existing client
+      $entres = $generations->where('mode',1)->get();
+      $sorties = $generations->where('mode',2)->get();
+      return view('client.single')->with('entres',$entres)->with('sorties',$sorties)->with('client',$client);
+
+    }
+    public function get_edit_client($id)
+    {
+      $client = client::find($id);
+      $generations = Generation::where('fourni',$client->name); // generation where the fourni have the name of existing client
+      $entres = $generations->where('mode',1)->get();
+      $sorties = $generations->where('mode',2)->get();
+      return view('client.edit')->with('entres',$entres)->with('sorties',$sorties)->with('client',$client);
+
+    }
+    public function edit_client(Request $request,$id)
+    {
+      $client = client::find($id);
+      $this->validate($request,[
+        'name' => 'required'
+      ]);
+      $client = new client();
+      $client->name = $request->name;
+      $client->telephone = $request->telephone;
+      $client->email = $request->email;
+      $client->update();
+      return redirect()->route('single.client',$id);
+    }
 
 }

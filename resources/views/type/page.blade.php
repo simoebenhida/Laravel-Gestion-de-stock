@@ -23,7 +23,7 @@ Entres
               <table id="datatables-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                       <thead>
                           <tr>
-                             
+
                               <th>Date</th>
                               <th>N°=Facture</th>
                               <th>Quantite</th>
@@ -53,14 +53,14 @@ Entres
                               <td>{{ $type->nfacture }}</td>
                               <td>{{ $type->quantite}}</td>
                               <td>{{ $type->prix_uni}}</td>
-                              
+
                               <td>{{ $type->fourni }}</td>
                               <td>{!! $type->solde = $type->quantite * $type->prix_uni !!}</td>
                               <td>
                           <div class="btn-group btn-group-xs">
                            <a href="{{ route('get_edit_page_types',$type->id) }}" class="btn btn-default edit-button"><i class="fa fa-edit"></i></a>
                             <a href="{{ route('destroy.generation',$type->id) }}" class="btn btn-default"><i class="fa fa-trash"></i></a>
-                            
+
                           </div>
                         </td>
 
@@ -85,6 +85,6 @@ Entres
   <script src="{{ URL::to('assets/libs/jquery-datatables/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
   <script src="{{ URL::to('assets/js/pages/datatables.js') }}"></script>
   <script>
-       $('#active-entres-table').addClass('active');
+       $('#active-type').addClass('active');
 </script>
 @endsection

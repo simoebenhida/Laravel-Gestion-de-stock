@@ -1,0 +1,2 @@
+{{ $generation->fourni }}
+{{ $client->name }}

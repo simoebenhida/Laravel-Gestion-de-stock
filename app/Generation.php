@@ -10,4 +10,5 @@ class Generation extends Model
     {
       return $this->belongsTo('App\type');
     }
+    
 }

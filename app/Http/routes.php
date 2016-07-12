@@ -11,12 +11,32 @@
 |
 */
 Route::get('home',function(){
-return view('home');
+return view('auth.login');
 });
 Route::get('/',[
   'uses' => 'DashboardController@home',
   'as' => 'home.dashboard'
   ]);
+
+
+  Route::get('connection',[
+    'uses' => 'UserController@get_login',
+    'as' => 'login'
+  ]);
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Client--------------------------------------------
+  //
+Route::get('client/{id}',[
+  'uses' => 'generationController@single_client',
+  'as' => 'single.client'
+]);
+Route::get('client/edit/{id}',[
+  'uses' => 'generationController@get_edit_client',
+  'as' => 'get_edit_client'
+]);
+Route::post('client/edit/{id}',[
+  'uses' => 'generationController@edit_client',
+  'as' => 'edit.client'
+]);
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Generation--------------------------------------------
 //
 Route::get('generation',[

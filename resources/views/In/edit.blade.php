@@ -9,7 +9,7 @@
         <div class="col-md-6 col-md-offset-3 portlets ui-sortable">
 						<div class="widget">
 							<div class="widget-header transparent">
-								<h2><strong>Ajouter</strong> Entres</h2>
+								<h2 class="text-center"><strong>Ajouter</strong> Entres</h2>
 							</div>
 							<div class="widget-content padding">
 								<div id="basic-form">
