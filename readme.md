@@ -10,18 +10,28 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
+# Stock Management
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+#Users</br>
 
-## Contributing
+-Add Out and In Products with Date - Name - Clients </br>
+-Tables with many good features</br>
+-Manage your profil </br>
+-Add your picture</br>
+-Change your password</br>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+#Admin</br>
 
-## Security Vulnerabilities
+-Platform manager</br>
+-Create Users and Clients</br>
+-Remove and edit the Out and In products</br>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+#Design(with better features)
+-Jquery</br>
+-css
+</br>
+# Hire Me</br>
 
-## License
+If you are looking to start a web development project I am happy to work with you as a contract project manager. I am very skilled in working directly with executive teams to understand vision and to pass that onto development teams to maximize business ROI and efficiency.</br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+For all requests or quotes on Marketing or Project Management consulting, please email me at mohameedbenhida@gmail.com
