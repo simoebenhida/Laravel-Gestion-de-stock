@@ -10,7 +10,7 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="widget">
         <div class="widget-header transparent">
           <h2 class="text-center"><strong>Entres</strong></h2>
@@ -44,7 +44,7 @@
                               <td>{{ $entre->quantite}}</td>
                               <td>{{ $entre->prix_uni}}</td>
                               <td>{{ $entre->fourni }}</td>
-                        
+
                           </tr>
                         @endforeach
 
@@ -56,7 +56,7 @@
 
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="widget">
         <div class="widget-header transparent">
           <h2 class="text-center"><strong>Sorties</strong></h2>
@@ -90,7 +90,7 @@
                               <td>{{ $sortie->quantite}}</td>
                               <td>{{ $sortie->prix_uni}}</td>
                               <td>{{ $sortie->fourni }}</td>
-                        
+
                           </tr>
                         @endforeach
 
